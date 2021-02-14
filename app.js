@@ -80,9 +80,9 @@ function sumArray(sumArr) {
   let summation = 0;
   for (let i = 0; i < sumArr.length; i += 2) {
     if ((i + 1) < sumArr.length) {
-      summation += sum(sumArr[i], sumArr[i + 1])[0];
+      summation = sum(sum(sumArr[i], sumArr[i + 1])[0], summation)[0];
     } else {
-      summation += sum(sumArr[i], 0)[0];
+      summation = sum(sumArr[i], summation)[0];
     }
   }
   return [summation, `${sumArr} was passed in as an array of numbers, and ${summation} is their sum.`];
@@ -110,9 +110,9 @@ function multiplyArray(multArr) {
   let multArray = 1;
   for (let i = 0; i < multArr.length; i += 2) {
     if ((i + 1) < multArr.length) {
-      multArray *= multiply(multArr[i], multArr[i + 1])[0];
+      multArray = multiply(multiply(multArr[i], multArr[i + 1])[0], multArray)[0];
     } else {
-      multArray *= multiply(multArr[i], 1)[0];
+      multArray = multiply(multArr[i], multArray)[0];
     }
   }
   return [multArray, `The numbers ${multArr} have a product of ${multArray}.`];
@@ -147,9 +147,9 @@ function multiplyAnyArray(dynamicArray) {
   let multArray = 1;
   for (let i = 0; i < dynamicArray.length; i += 2) {
     if ((i + 1) < dynamicArray.length) {
-      multArray *= multiply(dynamicArray[i], dynamicArray[i + 1])[0];
+      multArray = multiply(multiply(dynamicArray[i], dynamicArray[i + 1])[0], multArray)[0];
     } else {
-      multArray *= multiply(dynamicArray[i], 1)[0];
+      multArray = multiply(dynamicArray[i], multArray)[0];
     }
   }
   return [multArray, `The numbers ${dynamicArray} have a product of ${multArray}.`];
