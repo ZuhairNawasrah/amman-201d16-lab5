@@ -56,7 +56,7 @@ function sumAndMultiply(a, b, c) {
   let multNo = multiply(multiply(a, b)[0], c)[0];
   return [sumNo, multNo, `${a} and ${b} and ${c} sum to ${sumNo}.`, `The product of ${a} and ${b} and ${c} is ${multNo}.`];
 }
-//hello world
+
 // Here is the test for sumAndMultiply(); uncomment it to run it
 testSumAndMultiply(4, 7, 5);
 
